@@ -1,10 +1,12 @@
 ﻿namespace SwinAdventureTest;
+using SwinAdventure;
 
-public class Tests
+public class AreYouTest
 {
     [SetUp]
     public void Setup()
     {
+        IdentifiableObject 
     }
 
     [Test]

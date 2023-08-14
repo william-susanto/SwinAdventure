@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1706.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventure", "SwinAdventure\SwinAdventure.csproj", "{1F55E03C-F8D4-4AC0-BB73-F6680B797DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventureTest", "SwinAdventureTest\SwinAdventureTest.csproj", "{3D01BBEB-B110-4FAF-B355-EA8B4084F577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwinAdventure.UnitTest", "SwinAdventureTest\SwinAdventure.UnitTest.csproj", "{3D01BBEB-B110-4FAF-B355-EA8B4084F577}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
