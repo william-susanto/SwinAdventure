@@ -4,7 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        IdentifiableObject test = new IdentifiableObject(new string[] {});
+
+        Console.WriteLine(test.FirstId);
     }
 }
 

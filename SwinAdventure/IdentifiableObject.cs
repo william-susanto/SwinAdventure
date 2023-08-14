@@ -13,14 +13,14 @@ namespace SwinAdventure
 
             foreach (string id in idents)
             {
-                _identifiers.Add(id);
+                AddIdentifier(id);
             }
         }
 
         // Checks if the passed in identifier is in the _identifiers
         public bool AreYou(string id)
         {
-            return true;
+            return _identifiers.Contains(id.ToLower());
         }
 
         // Returns the first identifier from _identifiers, or an empty string if the object has no identifiers
@@ -28,7 +28,14 @@ namespace SwinAdventure
         {
             get
             {
-                return _identifiers[0];
+                if (_identifiers.Count > 0)
+                {
+                    return _identifiers[0];
+                }
+                else
+                {
+                    return "";
+                }
             }
         }
 
