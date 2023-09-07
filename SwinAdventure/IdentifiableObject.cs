@@ -5,7 +5,6 @@ namespace SwinAdventure
     {
         List<string> _identifiers;
 
-
         public IdentifiableObject(string[] idents)
         {
             _identifiers = new List<string>();
@@ -16,12 +15,10 @@ namespace SwinAdventure
             }
         }
 
-
         public bool AreYou(string id)
         {
             return _identifiers.Contains(id.ToLower());
         }
-
 
         public string FirstId
         {
@@ -37,7 +34,6 @@ namespace SwinAdventure
                 }
             }
         }
-
 
         public void AddIdentifier(string id)
         {
