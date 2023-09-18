@@ -15,13 +15,17 @@ public class BagTest
     [SetUp]
     public void Setup()
     {
-        _testBag1 = new Bag(new string[] { "self", "backpack" }, "brown backpack", "A short sword cast from bronze");
-        _testBag2 = new Bag(new string[] { "self", "bag" }, "mini bag", "A short sword cast from bronze");
+        _testBag1 = new Bag(new string[] { "backpack", "self" }, "brown backpack", "A short sword cast from bronze");
+        _testBag2 = new Bag(new string[] { "bag", "self" }, "mini bag", "A short sword cast from bronze");
 
         _newItem1 = new Item(new string[] { "sword", "bronze" }, "bronze sword", "A short sword cast from bronze");
         _newItem2 = new Item(new string[] { "shovel", "spade" }, "shovel", "This is a might fine shovel");
         _newItem3 = new Item(new string[] { "water", "bottle" }, "water bottle", "Carry water with this item");
 
+
+        _testBag1.Inventory.Put(_newItem1);
+        _testBag1.Inventory.Put(_newItem2);
+        _testBag1.Inventory.Put(_newItem3);
     }
 
     [Test]
@@ -37,21 +41,26 @@ public class BagTest
 
     }
 
-    //[Test]
-    //public void TestPlayerLocatesItself()
-    //{
-    //    Assert.That(_testObject1.FullDescription, Is.EqualTo("A short sword cast from bronze"));
-    //}
+    [Test]
+    public void TestBagLocatesNothing()
+    {
+        Assert.That(_testBag1.Locate("123"), Is.EqualTo(null));
 
-    //[Test]
-    //public void TestPlayerLocatesNothing()
-    //{
-    //    Assert.That(_testObject1.FullDescription, Is.EqualTo("A short sword cast from bronze"));
-    //}
+    }
 
-    //[Test]
-    //public void TestPlayerFullDescription()
-    //{
-    //    Assert.That(_testObject1.FullDescription, Is.EqualTo("You are William, Just another player in this world. You are carrying: sword, shovel, "));
-    //}
+    [Test]
+    public void TestBagFullDescription()
+    {
+        Assert.That(_testBag1.FullDescription, Is.EqualTo("In the brown backpack you can see: sword, shovel, water, "));
+    }
+
+    [Test]
+    public void TestBagInBag()
+    {
+        _testBag1.Inventory.Put(_testBag2);
+
+        Assert.That(_testBag1.Locate("bag"), Is.EqualTo(_testBag2));
+        Assert.That(_testBag1.Locate("shovel"), Is.EqualTo(_newItem2));
+        Assert.That(_testBag1.Locate("shove2"), !Is.EqualTo(_newItem2));
+    }
 }
