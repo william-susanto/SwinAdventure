@@ -25,13 +25,16 @@ namespace SwinAdventure
 		{
 			get
 			{
-                return $"You Are: {Name}, {FullDescription}. You are carrying: {_inventory.ItemList}";
+                return ($"You are: {Name}, {base.FullDescription}. You are carrying: {_inventory.ItemList}");
 			}
 		}
 
 		public Inventory Inventory
 		{
-			get => _inventory;
+			get
+			{
+				return _inventory;
+			}
 		}
 	} 
 }

@@ -34,8 +34,9 @@ namespace SwinAdventure
                 if (i.AreYou(id))
                 {
 					Item temp = i;
-                    _items.Remove(i);
-                    return temp;
+					_items.Remove(i);
+					return temp;
+                    
                 }
             }
             return null;

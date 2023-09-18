@@ -27,11 +27,11 @@ public class InventoryTest
         Assert.True(_testObject1.HasItem("sword"));
     }
 
-    //[Test]
-    //public void TestNoItemFind()
-    //{
-    //    Assert.False(_testObject1.HasItem("bob"));
-    //}
+    [Test]
+    public void TestNoItemFind()
+    {
+        Assert.False(_testObject1.HasItem("bob"));
+    }
 
     [Test]
     public void TestFetchItem()
@@ -42,7 +42,7 @@ public class InventoryTest
     [Test]
     public void TestTakeItem()
     {
-        Assert.That(_testObject1.Fetch("sword"), Is.EqualTo(_newItem1));
+        Assert.That(_testObject1.Take("sword"), Is.EqualTo(_newItem1));
         Assert.False(_testObject1.HasItem("sword"));
     }
 

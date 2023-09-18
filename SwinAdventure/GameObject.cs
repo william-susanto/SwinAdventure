@@ -14,17 +14,26 @@ namespace SwinAdventure
 
 		public string Name
 		{
-			get => _name;
+			get
+			{
+				return _name;
+			}
 		}
 
 		public string ShortDescription
 		{
-			get => "a " + _name + " (" + FirstId + ")";
+			get
+			{
+				return "a " + _name + " (" + FirstId + ")";
+			}
 		}
 
 		public virtual string FullDescription
 		{
-			get => _description;
+			get
+			{
+				return _description;
+			}
 		}
 	}
 }
